@@ -1,0 +1,8 @@
+{
+    "name": "gg.whalepass.whalepasssdk",
+    "version": "1.0.0",
+    "description": "Unity SDK for Whalepass API Endpoints",
+    "displayName": "WhalepassSdk",
+    "unity": "2019.1",
+    "documentationUrl": "https://www.whalepass.gg/documentation"
+}
