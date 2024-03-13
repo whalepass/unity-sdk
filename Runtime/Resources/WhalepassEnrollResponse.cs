@@ -1,13 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Whalepass
 {
-    public class WhalepassEnrollResponse
+    [SerializeField]
+    public class WhalepassEnrollResponse : WhalepassBaseResponse
     {
-        bool success;
-        WhalepassPlayer player;
+        public WhalepassPlayer player;
+
+        public WhalepassEnrollResponse(WhalepassBaseResponse baseResponse) : base(baseResponse.succeed, baseResponse.responseBody, baseResponse.errorBody)
+        {
+            if (succeed)
+            {
+                player = DeserializeJson<WhalepassPlayer>(baseResponse.responseBody);
+            }
+        }
+    }
+
+    [SerializeField]
+    public class WhalepassEnrollRequest
+    {
+        public string playerId;
+        public string gameId;
     }
 
 }

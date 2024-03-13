@@ -11,6 +11,7 @@ namespace Whalepass
         public string apiKey;
         public string gameId;
         public string testBattlepassId;
+        public static WhalepassSdkSettings settings;
     }
 
 }

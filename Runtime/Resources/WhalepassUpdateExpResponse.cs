@@ -1,31 +1,56 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Whalepass
 {
-    public class WhalepassUpdateExpResponse
+    [SerializeField]
+    public class WhalepassUpdateExpResponse : WhalepassBaseResponse
     {
-        WhalepassPlayerBattlepassProgress playerBattlepassProgress;
-        List<WhalepassBattlepassLevel> completedLevels;
+
+        public WhalepassUpdateExpResult result;
+
+        public WhalepassUpdateExpResponse(WhalepassBaseResponse baseResponse) : base(baseResponse.succeed, baseResponse.responseBody, baseResponse.errorBody)
+        {
+            if (succeed)
+            {
+                result = DeserializeJson<WhalepassUpdateExpResult>(responseBody);
+            }
+        }
     }
 
+    [SerializeField]
+    public class WhalepassUpdateExpResult
+    {
+        public WhalepassPlayerBattlepassProgress playerBattlepassProgress;
+        public List<WhalepassBattlepassLevel> completedLevels;
+    }
+
+
+    [SerializeField]
     public class WhalepassBattlepassLevel
     {
-        string id;
-        int level;
-        long expRequired;
+        public string id;
+        public int level;
+        public long expRequired;
     }
 
+    [SerializeField]
     public class WhalepassPlayerBattlepassProgress
     {
-        string id;
-        string playerId;
-        string battlepassId;
-        long currentExp;
-        long lastCompletedLevel;
-        List<int> completedLevels;
-        List<string> completedChallenges;
+        public string id;
+        public string playerId;
+        public string battlepassId;
+        public long lastCompletedLevel;
+        public List<int> completedLevels;
+        public List<string> completedChallenges;
+    }
+
+    [SerializeField]
+    public class WhalepassUpdateExpRequest
+    {
+        public string playerId;
+        public string gameId;
+        public long additionalExp;
     }
 
 }

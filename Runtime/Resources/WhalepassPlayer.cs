@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace Whalepass
 {
+    [SerializeField]
     public class WhalepassPlayer
     {
-        string id;
-        string externalPlayerId;
+        public string id;
+        public string externalPlayerId;
     }
 
 }

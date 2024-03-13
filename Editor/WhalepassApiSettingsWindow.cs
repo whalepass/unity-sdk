@@ -1,12 +1,9 @@
-using Codice.Utils;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
 namespace Whalepass
 {
-    public class WhalepassApiSettingsWindow: EditorWindow
+    public class WhalepassApiSettingsWindow : EditorWindow
     {
         [MenuItem("Whalepass/Api Settings")]
         public static void ShowWindow()
@@ -17,7 +14,6 @@ namespace Whalepass
         private void OnGUI()
         {
             var settings = AssetDatabase.LoadAssetAtPath<WhalepassSdkSettings>("Assets/Editor/WhalepassSdkSettings.asset");
-
             if (settings != null)
             {
                 EditorGUILayout.BeginVertical();
@@ -30,6 +26,8 @@ namespace Whalepass
                     EditorUtility.SetDirty(settings);
                     AssetDatabase.SaveAssets();
                 }
+
+                WhalepassSdkSettings.settings = settings;
 
                 EditorGUILayout.EndVertical();
             }
