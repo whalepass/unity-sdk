@@ -22,6 +22,8 @@ namespace Whalepass
         public string battlepassId;
         public long currentExp;
         public long lastCompletedLevel;
+        public long expRequiredForLastLevel;
+        public long expRequiredForNextLevel;
     }
 
     [SerializeField]
