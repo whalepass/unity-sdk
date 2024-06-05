@@ -5,11 +5,11 @@ namespace Whalepass
     [SerializeField]
     public class WhalepassGetPlayerBaseProgressResponse : WhalepassBaseResponse
     {
-        public WhalepassPlayerBaseProgress progress;
+        public WhalepassPlayerBaseProgress result;
 
         public WhalepassGetPlayerBaseProgressResponse(WhalepassBaseResponse baseResponse) : base(baseResponse.succeed, baseResponse.responseBody, baseResponse.errorBody)
         {
-            progress = DeserializeJson<WhalepassPlayerBaseProgress>(baseResponse.responseBody);
+            result = DeserializeJson<WhalepassPlayerBaseProgress>(baseResponse.responseBody);
         }
     }
 

@@ -34,6 +34,17 @@ namespace Whalepass
             WhalepassApiClient.Instance.enroll(request, onComplete);
         }
 
+        public static void getBattlepassBase(Action<WhalepassGetBattlepassBaseResponse> onComplete)
+        {
+            if (!ValidateSdkSettings())
+            {
+                onComplete.Invoke(new WhalepassGetBattlepassBaseResponse(new WhalepassBaseResponse(false, null, "Sdk Settings is not initialized!")));
+                return;
+            }
+
+            WhalepassApiClient.Instance.getBattlepassBase(WhalepassApiClient.Instance.Settings.gameId, onComplete);
+        }
+
         public static void updateExp(string externalPlayerId, long additionalExp, Action<WhalepassUpdateExpResponse> onComplete)
         {
             if (!ValidateSdkSettings())

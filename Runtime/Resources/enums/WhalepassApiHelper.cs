@@ -24,6 +24,8 @@ public class WhalepassApiHelper
                 return new WhalepassRequest(BaseUrl + "players/{0}/redirect?gameId={1}", "GET");
             case WhalepassApiEndpoint.GET_BATTLEPASS:
                 return new WhalepassRequest(BaseUrl + "battlepass/{0}?includeLevels={1}&includeChallenges={2}", "GET");
+            case WhalepassApiEndpoint.GET_BATTLEPASS_BASE:
+                return new WhalepassRequest(BaseUrl + "battlepass/base?gameId={0}", "GET");
             // Add other cases as needed
             default:
                 throw new ArgumentOutOfRangeException(nameof(endpoint), $"Not expected endpoint value: {endpoint}");
