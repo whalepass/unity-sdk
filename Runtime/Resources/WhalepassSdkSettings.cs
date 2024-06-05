@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -12,6 +10,15 @@ namespace Whalepass
         public string gameId;
         public string testBattlepassId;
         public static WhalepassSdkSettings settings;
+
+        public static WhalepassSdkSettings LoadSettings()
+        {
+            if (settings == null)
+            {
+                settings = Resources.Load<WhalepassSdkSettings>("WhalepassSdkSettings");
+            }
+            return settings;
+        }
     }
 
 }

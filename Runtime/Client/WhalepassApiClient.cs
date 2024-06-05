@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -28,7 +27,7 @@ namespace Whalepass.Client
                         // Create new instance if one doesn't already exist
                         GameObject apiManagerObj = new GameObject("ApiManager");
                         _instance = apiManagerObj.AddComponent<WhalepassApiClient>();
-                        _settings = AssetDatabase.LoadAssetAtPath<WhalepassSdkSettings>("Assets/Editor/WhalepassSdkSettings.asset");
+                        _settings = WhalepassSdkSettings.LoadSettings();
                     }
                     DontDestroyOnLoad(_instance.gameObject);
                 }

@@ -1,6 +1,3 @@
-using Codice.Utils;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,7 +8,7 @@ namespace Whalepass
     {
         static WhalepassSdkSettingsInitializer()
         {
-            var assetPath = "Assets/Editor/WhalepassSdkSettings.asset";
+            var assetPath = "Assets/Resources/WhalepassSdkSettings.asset";
             var directoryPath = System.IO.Path.GetDirectoryName(assetPath);
 
             if (!System.IO.Directory.Exists(directoryPath))

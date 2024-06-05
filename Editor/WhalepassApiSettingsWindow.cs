@@ -13,7 +13,7 @@ namespace Whalepass
 
         private void OnGUI()
         {
-            var settings = AssetDatabase.LoadAssetAtPath<WhalepassSdkSettings>("Assets/Editor/WhalepassSdkSettings.asset");
+            var settings = AssetDatabase.LoadAssetAtPath<WhalepassSdkSettings>("Assets/Resources/WhalepassSdkSettings.asset");
             if (settings != null)
             {
                 EditorGUILayout.BeginVertical();
