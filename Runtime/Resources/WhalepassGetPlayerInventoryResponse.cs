@@ -30,9 +30,9 @@ namespace Whalepass
     public class WhalepassPlayerInventoryItem
     {
         public string rewardId;
-        public string battlepassId;
         public string name;
         public float amount;
+        public string mediaUrl;
     }
 
     [SerializeField]

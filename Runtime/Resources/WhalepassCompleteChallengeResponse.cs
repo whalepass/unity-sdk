@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,8 +29,12 @@ namespace Whalepass
     public class WhalepassBattlepassChallenge
     {
         public string id;
+        public string battlepassId;
         public string name;
+        public DateTime startDate;
+        public DateTime endDate;
         public bool premium;
+        public List<WhalepassBattlepassReward> rewards;
     }
 
     [SerializeField]

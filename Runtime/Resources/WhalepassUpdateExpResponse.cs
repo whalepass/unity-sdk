@@ -30,8 +30,12 @@ namespace Whalepass
     public class WhalepassBattlepassLevel
     {
         public string id;
+        public string battlepassId;
         public int level;
         public long expRequired;
+        public bool status;
+        public List<WhalepassBattlepassReward> freeTierRewards;
+        public List<WhalepassBattlepassReward> premiumTierRewards;
     }
 
     [SerializeField]
@@ -40,6 +44,7 @@ namespace Whalepass
         public string id;
         public string playerId;
         public string battlepassId;
+        public long currentExp;
         public long lastCompletedLevel;
         public List<int> completedLevels;
         public List<string> completedChallenges;

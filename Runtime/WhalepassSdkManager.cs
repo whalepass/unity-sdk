@@ -145,7 +145,33 @@ namespace Whalepass
             var request = new WhalepassGetBattlepassRequest();
             request.includeLevels = includeLevels;
             request.includeChallenges = includeChallenges;
-            request.battlepassId = battlepassId;
+            request.battlepassId = battlepassId == null ? WhalepassApiClient.Instance.Settings.testBattlepassId : battlepassId;
+
+            WhalepassApiClient.Instance.getBattlepass(request, onComplete);
+        }
+
+        public static void getBattlepass(bool includeLevels, bool includeChallenges, Action<WhalepassGetBattlepassResponse> onComplete)
+        {
+            if (!ValidateSdkSettings())
+                onComplete.Invoke(new WhalepassGetBattlepassResponse(new WhalepassBaseResponse(false, null, "Sdk Settings is not initialized!")));
+
+            var request = new WhalepassGetBattlepassRequest();
+            request.includeLevels = includeLevels;
+            request.includeChallenges = includeChallenges;
+            request.battlepassId = WhalepassApiClient.Instance.Settings.testBattlepassId;
+
+            WhalepassApiClient.Instance.getBattlepass(request, onComplete);
+        }
+
+        public static void getBattlepass(Action<WhalepassGetBattlepassResponse> onComplete)
+        {
+            if (!ValidateSdkSettings())
+                onComplete.Invoke(new WhalepassGetBattlepassResponse(new WhalepassBaseResponse(false, null, "Sdk Settings is not initialized!")));
+
+            var request = new WhalepassGetBattlepassRequest();
+            request.includeLevels = true;
+            request.includeChallenges = true;
+            request.battlepassId = WhalepassApiClient.Instance.Settings.testBattlepassId;
 
             WhalepassApiClient.Instance.getBattlepass(request, onComplete);
         }
