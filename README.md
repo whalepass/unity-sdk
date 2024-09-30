@@ -14,6 +14,8 @@ To be able to install the SDK, you can use this github repository and Unity Pack
   
 ## Settings
 
+<img width="583" alt="image" src="https://github.com/user-attachments/assets/cb602ed5-67cb-490f-af26-515ca17c22b4">
+
 - After adding the SDK you should see Whalepass menu in upper panel of Unity
 - Click Whalepass -> Api Settings
 - Enter required information (You can find them from the dashboard.whalepas.gg)
