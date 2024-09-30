@@ -1,11 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Whalepass
 {
-    [SerializeField]
+    [Serializable]
     public class WhalepassBaseResponse
     {
         public bool succeed;
@@ -15,10 +13,11 @@ namespace Whalepass
         public WhalepassBaseResponse(bool succeed, string body)
         {
             this.succeed = succeed;
-            if(succeed)
+            if (succeed)
             {
                 this.responseBody = body;
-            } else
+            }
+            else
             {
                 this.errorBody = body;
             }

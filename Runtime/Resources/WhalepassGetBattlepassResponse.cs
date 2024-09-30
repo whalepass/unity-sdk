@@ -1,9 +1,9 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Whalepass
 {
-    [SerializeField]
+    [Serializable]
     public class WhalepassGetBattlepassResponse : WhalepassBaseResponse
     {
 
@@ -18,16 +18,15 @@ namespace Whalepass
         }
     }
 
-    [SerializeField]
+    [Serializable]
     public class WhalepassBattlepass
     {
         public string id;
         public string name;
         public List<WhalepassBattlepassChallenge> challenges;
-        public List<WhalepassBattlepassLevel> level;
+        public List<WhalepassBattlepassLevel> levels;
     }
 
-    [SerializeField]
     public class WhalepassGetBattlepassRequest
     {
         public string battlepassId;

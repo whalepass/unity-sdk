@@ -1,9 +1,9 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Whalepass
 {
-    [SerializeField]
+    [Serializable]
     public class WhalepassGetPlayerInventoryResponse : WhalepassBaseResponse
     {
         public WhalepassPlayerInventory inventory;
@@ -17,7 +17,7 @@ namespace Whalepass
         }
     }
 
-    [SerializeField]
+    [Serializable]
     public class WhalepassPlayerInventory
     {
         public string gameId;
@@ -26,7 +26,7 @@ namespace Whalepass
         public List<WhalepassPlayerInventoryItem> items;
     }
 
-    [SerializeField]
+    [Serializable]
     public class WhalepassPlayerInventoryItem
     {
         public string rewardId;
@@ -35,7 +35,6 @@ namespace Whalepass
         public string mediaUrl;
     }
 
-    [SerializeField]
     public class WhalepassGetPlayerInventoryRequest
     {
         public string playerId;

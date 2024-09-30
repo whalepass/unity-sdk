@@ -1,8 +1,8 @@
-using UnityEngine;
+using System;
 
 namespace Whalepass
 {
-    [SerializeField]
+    [Serializable]
     public class WhalepassEnrollResponse : WhalepassBaseResponse
     {
         public WhalepassPlayer player;
@@ -16,7 +16,6 @@ namespace Whalepass
         }
     }
 
-    [SerializeField]
     public class WhalepassEnrollRequest
     {
         public string playerId;

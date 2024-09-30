@@ -1,8 +1,7 @@
 using System;
-using UnityEngine;
 using Whalepass;
 
-[SerializeField]
+[Serializable]
 public class WhalepassGetBattlepassBaseResponse : WhalepassBaseResponse
 {
     public WhalepassGetBattlepassBaseResult result;
@@ -16,7 +15,7 @@ public class WhalepassGetBattlepassBaseResponse : WhalepassBaseResponse
     }
 }
 
-[SerializeField]
+[Serializable]
 public class WhalepassGetBattlepassBaseResult
 {
     public string id;

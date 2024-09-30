@@ -1,8 +1,8 @@
-using UnityEngine;
+using System;
 
 namespace Whalepass
 {
-    [SerializeField]
+    [Serializable]
     public class WhalepassBattlepassReward
     {
         public string id;

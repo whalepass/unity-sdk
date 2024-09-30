@@ -1,8 +1,8 @@
-using UnityEngine;
+using System;
 
 namespace Whalepass
 {
-    [SerializeField]
+    [Serializable]
     public class WhalepassGetPlayerRedirectionLink : WhalepassBaseResponse
     {
         public WhalepassPlayerRedirectionLink link;
@@ -16,13 +16,12 @@ namespace Whalepass
         }
     }
 
-    [SerializeField]
+    [Serializable]
     public class WhalepassPlayerRedirectionLink
     {
         public string redirectionLink;
     }
 
-    [SerializeField]
     public class WhalepassGetPlayerRedirectionLinkRequest
     {
         public string playerId;

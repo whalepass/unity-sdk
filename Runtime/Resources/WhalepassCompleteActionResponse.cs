@@ -1,9 +1,9 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Whalepass
 {
-    [SerializeField]
+    [Serializable]
     public class WhalepassCompleteActionResponse : WhalepassBaseResponse
     {
 
@@ -18,7 +18,7 @@ namespace Whalepass
         }
     }
 
-    [SerializeField]
+    [Serializable]
     public class WhalepassCompleteActionResult
     {
         public WhalepassPlayerBattlepassProgress playerBattlepassProgress;

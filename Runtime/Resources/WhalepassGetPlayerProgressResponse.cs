@@ -1,8 +1,8 @@
-using UnityEngine;
+using System;
 
 namespace Whalepass
 {
-    [SerializeField]
+    [Serializable]
     public class WhalepassGetPlayerBaseProgressResponse : WhalepassBaseResponse
     {
         public WhalepassPlayerBaseProgress result;
@@ -13,7 +13,7 @@ namespace Whalepass
         }
     }
 
-    [SerializeField]
+    [Serializable]
     public class WhalepassPlayerBaseProgress
     {
         public string playerId;
@@ -26,7 +26,6 @@ namespace Whalepass
         public long expRequiredForNextLevel;
     }
 
-    [SerializeField]
     public class WhalepassGetPlayerBaseProgressRequest
     {
         public string playerId;
