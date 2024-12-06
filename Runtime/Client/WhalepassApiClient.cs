@@ -100,6 +100,17 @@ namespace Whalepass.Client
             }));
         }
 
+        internal void getPlayerProgress(WhalepassGetPlayerBaseProgressRequest request, Action<WhalepassGetPlayerProgressResponse> onComplete)
+        {
+            var whalepassRequest = WhalepassApiHelper.GetUri(WhalepassApiEndpoint.GET_PLAYER_PROGRESS);
+            whalepassRequest.url = String.Format(whalepassRequest.url, request.playerId, request.gameId);
+            var webRequest = BuildUnityWebRequest(whalepassRequest, JsonUtility.ToJson(request), new Dictionary<string, string> { { "X-Battlepass-Id", _settings.testBattlepassId }, { "X-Api-Key", _settings.apiKey } });
+            StartCoroutine(SendRequest(webRequest, response =>
+            {
+                onComplete.Invoke(new WhalepassGetPlayerProgressResponse(response));
+            }));
+        }
+
         internal void getPlayerRedirectionLink(WhalepassGetPlayerRedirectionLinkRequest request, Action<WhalepassGetPlayerRedirectionLink> onComplete)
         {
             var whalepassRequest = WhalepassApiHelper.GetUri(WhalepassApiEndpoint.GET_REDIRECTION_LINK);

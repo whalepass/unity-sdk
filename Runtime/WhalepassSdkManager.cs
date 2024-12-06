@@ -113,6 +113,19 @@ namespace Whalepass
             WhalepassApiClient.Instance.getPlayerBaseProgress(request, onComplete);
         }
 
+        public static void getPlayerProgress(string externalPlayerId, Action<WhalepassGetPlayerProgressResponse> onComplete)
+        {
+            if (!ValidateSdkSettings())
+                onComplete.Invoke(new WhalepassGetPlayerProgressResponse(new WhalepassBaseResponse(false, null, "Sdk Settings is not initialized!")));
+
+            Debug.Log("UIsss");
+            var request = new WhalepassGetPlayerBaseProgressRequest();
+            request.playerId = externalPlayerId;
+            request.gameId = WhalepassApiClient.Instance.Settings.gameId;
+
+            WhalepassApiClient.Instance.getPlayerProgress(request, onComplete);
+        }
+
         public static void getPlayerInventory(string externalPlayerId, Action<WhalepassGetPlayerInventoryResponse> onComplete)
         {
             if (!ValidateSdkSettings())
