@@ -118,7 +118,6 @@ namespace Whalepass
             if (!ValidateSdkSettings())
                 onComplete.Invoke(new WhalepassGetPlayerProgressResponse(new WhalepassBaseResponse(false, null, "Sdk Settings is not initialized!")));
 
-            Debug.Log("UIsss");
             var request = new WhalepassGetPlayerBaseProgressRequest();
             request.playerId = externalPlayerId;
             request.gameId = WhalepassApiClient.Instance.Settings.gameId;
